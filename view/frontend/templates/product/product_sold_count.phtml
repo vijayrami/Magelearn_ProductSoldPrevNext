@@ -1,0 +1,5 @@
+<?php $_helper = $this->_helper = $this->helper('Magelearn\ProductSoldPrevNext\Helper\Data'); ?>
+<div class="product attribute product_count">
+	<strong>Products Sold:</strong>
+	<?= $_helper->getSoldQtyByProductId($this->getProduct()->getId()); ?>
+</div>

@@ -1,0 +1,94 @@
+div.product_count {
+    font-weight: normal;
+    margin-right: 5px;
+}
+.magelearn-previous-next {
+  margin: 1em 0;
+}
+.magelearn-previous-next .back-categories {
+  vertical-align: bottom;
+  margin-right: 2em;
+}
+.magelearn-previous-next .back-categories {
+    padding-left: 0;
+    display: inline-block;
+}
+.magelearn-previous-next .previous-next-action {
+  float: right;
+    padding-right: 0;
+    display: inline-block;
+}
+.magelearn-previous-next .back-categories a,
+.magelearn-previous-next .previous-next-action a {
+  border-bottom: 1px solid rgba(92,92,95,0.5);
+}
+.magelearn-previous-next .back-categories a:hover,
+.magelearn-previous-next .previous-next-action a:hover{
+    text-decoration: none;
+}
+@media screen and (max-width: 640px) {
+  .magelearn-previous-next .previous-next-action {
+      float: none;
+  }
+}
+.prev-next-products .product-nav.product-next .product-pop:before {
+    right: 26px;
+    left: auto;
+}
+.prev-next-products .product-nav .product-pop:before {
+    content: "";
+    width: 5px;
+    height: 2px;
+    border: 5px solid transparent;
+    border-bottom-color: #0f75bd;
+    display: block;
+    position: absolute;
+    top: -13px;
+    left: 0;
+}
+.prev-next-products .product-nav.product-next .product-pop {
+    left: auto;
+}
+.prev-next-products .product-nav .product-pop {
+    border-top: 3px solid #0f75bd;
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.20);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s;
+    text-align: center;
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 10px;
+}
+.prev-next-products .product-nav .product-pop .product-image {
+    margin-bottom: 10px;
+}
+.prev-next-products .product-nav .product-pop .product-name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 11px;
+}
+.previous-next-action .icon-open:before {
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.prev-next-products .product-nav:hover .product-pop {
+     opacity: 1;
+     visibility: visible;
+}

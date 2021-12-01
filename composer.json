@@ -1,0 +1,23 @@
+{
+    "name": "magelearn/module-product-sold-prev-next",
+    "description": "Display Products sold count and prev next product link on product detail page magento2.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Vijay Rami",
+            "email": "vijaymrami@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magelearn\\ProductSoldPrevNext\\": ""
+        }
+    }
+}

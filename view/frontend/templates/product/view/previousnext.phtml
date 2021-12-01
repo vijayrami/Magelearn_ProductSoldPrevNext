@@ -1,0 +1,45 @@
+<?php
+
+    $productId = $block->getProduct()->getId();
+    $category_ids = $block->getProduct()->getCategoryIds();
+    $_previous = $block->getPrevProduct($productId,$category_ids);
+    $_next = $block->getNextProduct($productId,$category_ids);
+    $category = $block->getCurrentCategory($category_ids);
+	
+	$_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+?>
+<div class="magelearn-previous-next">
+    <div class="back-categories">
+        <p>Back to: <a href="<?= $category->getUrl() ?>" title="<?=$category->getName()?>"><span> <?=$category->getName()?> </span></a></p>
+    </div>
+    <div class="previous-next-action prev-next-products">
+        <?php if($_previous): ?>
+        	<?php
+		        $productImage = $_imagehelper->init($_previous, 'category_page_grid')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
+		        $productImageUrl = $productImage->getUrl();
+		    ?>
+		    <div class="product-nav product-prev">
+	            <a href="<?php print_r($_previous->getProductUrl()); ?>" title="<?php print_r($_previous->getName()); ?>"><span class="icon-open">Previous</span></a>
+	            <div class="product-pop theme-border-color">
+		            <img class="product-image" src="<?php echo $productImageUrl; ?>" alt="<?php echo $productImage->getLabel(); ?>"/>
+		            <h3 class="product-name"><?php echo ucwords(strtolower($_previous->getName())); ?></h3>
+		        </div>
+	            <?php if($_next): ?><span class="divider">/</span><?php endif; ?>
+           </div>
+        <?php endif; ?>
+        <?php if($_next): ?>
+        	<?php
+		        $productImage = $_imagehelper->init($_next, 'category_page_grid')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
+		        $productImageUrl = $productImage->getUrl();
+		    ?>
+		    <div class="product-nav product-next">
+	            <a href="<?php print_r($_next->getProductUrl()); ?>" title="<?php print_r($_next->getName()); ?>"><span class="icon-open">Next</span></a>
+	            <div class="product-pop theme-border-color">
+		            <img class="product-image" src="<?php echo $productImageUrl; ?>" alt="<?php echo $productImage->getLabel(); ?>"/>
+		            <h3 class="product-name"><?php echo ucwords(strtolower($_next->getName())); ?></h3>
+		        </div>
+	       </div>
+        <?php endif; ?>
+    </div>
+</div>
